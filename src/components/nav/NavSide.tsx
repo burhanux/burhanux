@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import DarkLightSwitch from "../DarkLightSwitch";
 import { closeSideNav, removeOverlay, removeSideNavActive, openSideNavTopic, closeSideNavTopic } from "../../events";
 import Version from "../Version";
 
@@ -27,7 +28,7 @@ const NavSide = (props: any) => {
                         <li><Link onClick={removeSideNavActive} to="/about">About</Link></li>
                         <li><Link onClick={removeSideNavActive} to="/books">Books</Link></li>
                         <li><Link onClick={removeSideNavActive} to="/contact">Contact</Link></li>
-                        <li><a href="https://github.com/burhanux"><button type="button">GitHub</button></a></li>
+                        <li><a href="https://github.com/burhanux"><button className="github-btn" type="button">GitHub</button></a></li>
                     </ul>
                 </div>
                 <div className="NavSide-div-menu right-wing" id="NavSideNotes">
@@ -41,11 +42,17 @@ const NavSide = (props: any) => {
                         <li><Link onClick={removeSideNavActive} to="/about">About</Link></li>
                         <li><Link onClick={removeSideNavActive} to="/about">About</Link></li>
                         <li><Link onClick={removeSideNavActive} to="/about">About</Link></li>
+                        <li><Link onClick={removeSideNavActive} to="/about">About</Link></li>
+                        <li><Link onClick={removeSideNavActive} to="/about">About</Link></li>
+                        <li><Link onClick={removeSideNavActive} to="/about">About</Link></li>
+                        <li><Link onClick={removeSideNavActive} to="/about">About</Link></li>
+                        <li><Link onClick={removeSideNavActive} to="/about">About</Link></li>
                     </ul>
                 </div>
             </div>
             {/* Version Number */}
             <div className="NavSide-div">
+                {/* <DarkLightSwitch /> */}
                 <Version />
             </div>
 

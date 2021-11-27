@@ -51,6 +51,16 @@ nav {
     color: #1650a7;
     border: 1px solid rgba(146, 146, 146, 0.5);
     z-index: 10;
+
+.github-btn{
+    background-color: #5DAD1E;
+    padding: 0.3rem 0.8rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    color:#ffffff;
+
+}    
 }
 
 #NavTopOpenBtn,
@@ -74,6 +84,13 @@ nav ul a li {
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
+    border:none;
+
+    .beta{
+        font-size: 8px;
+        position: relative;
+top: -12px;
+    }
 }
 
 //! NavSide Styles
@@ -225,6 +242,7 @@ nav .version {
             display: flex;
             width: 100%;
             justify-content: space-around;
+            align-items: center;
         }
     }
 }

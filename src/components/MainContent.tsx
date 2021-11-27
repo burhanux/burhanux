@@ -35,7 +35,16 @@ function Home() {
 
         }
     }, [])
-    return <h1>HOME</h1>;
+    return (
+        <div>
+            <div className="container">
+                <h1>Light / Dark Mode</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores deserunt excepturi minima quisquam
+                    voluptatibus recusandae necessitatibus blanditiis voluptatum quidem ipsa aliquid accusamus sed quia a, unde
+                    velit nobis voluptate aspernatur?</p>
+            </div>
+        </div>
+    )
 }
 
 function About() {

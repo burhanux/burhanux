@@ -3,15 +3,19 @@ html {
     --bg: #fcfcfc;
     --bg-panel: #ebebeb;
     --color-headings: #0077ff;
+    --color-headings-hover: #3694ff;
     --color-text: #333333;
+    --bg-container: #ebebeb;
 }
 
 // If theme is switched to Dark
 html[data-theme="dark"] {
     --bg: #434343;
     --bg-panel: #333333;
-    // --color-headings: #3694ff;
+    --color-headings: #3694ff;
+    --color-headings-hover: #0077ff;
     --color-text: #b5b5b5;
+    --bg-container: rgb(138, 138, 138);
 }
 
 body {
@@ -33,14 +37,41 @@ body {
     }
 }
 
+.container {
+        // background-color: var(--bg-container);
+        background-color: var(--bg-panel);
+        margin: 5em;
+        padding: 5em;
+        border-radius: 15px;
+    
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+}
+
 #NavSide, #NavTop {
     background-color: var(--bg-panel);
     li a {
         color: var(--color-headings);
     }
 
+    a {
+        color: var(--color-headings);
+        text-decoration: none;
+    }
+    
+    a:hover {
+        color: var(--color-headings-hover);
+        text-decoration:none; 
+        cursor:pointer;  
+    }
+
     button{
         color: var(--color-text);
+    }
+
+    .logo-switch{
+        display:flex;
     }
 }
 
