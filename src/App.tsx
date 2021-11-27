@@ -3,7 +3,7 @@ import DarkLightSwitch from './components/DarkLightSwitch';
 import MainContent from './components/MainContent';
 import { Nav } from './components/nav/Nav';
 import './styles/App.scss';
-
+import './styles/darkmode.scss';
 
 function App() {
   return (

@@ -1,12 +1,25 @@
 import React, { useEffect } from 'react';
 import { darkLightMode } from '../events';
-import '../styles/darkmode.scss';
+// import '../styles/darkmode.scss';
 
 const DarkLightSwitch = () => {
   useEffect(() => {
     darkLightMode();
   }, [])
   return (
+    <div className="toggle-container">
+      <input type="checkbox" name="theme" id="switch" /><label htmlFor="switch" >Toggle</label>
+    </div>
+  )
+}
+
+export default DarkLightSwitch
+
+/*Reference:
+Creating a Dark & Light Toggle Mode on your UI Designs
+DesignCourse
+https://www.youtube.com/watch?v=ZKXv_ZHQ654
+
     <div>
       <div className="container">
         <h1>Light / Dark Mode</h1>
@@ -18,13 +31,4 @@ const DarkLightSwitch = () => {
           velit nobis voluptate aspernatur?</p>
       </div>
     </div>
-  )
-}
-
-export default DarkLightSwitch
-
-/*Reference:
-Creating a Dark & Light Toggle Mode on your UI Designs
-DesignCourse
-https://www.youtube.com/watch?v=ZKXv_ZHQ654
 */
