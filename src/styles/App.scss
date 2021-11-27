@@ -7,8 +7,6 @@
 }
 
 html {
-    // width: 100%;
-    // height: 100%;
     background-color: #f3f8fd;
 }
 
@@ -35,60 +33,28 @@ ul {
 .overlay.active {
     opacity: 1;
     pointer-events: all;
+    z-index: 11;
 }
 
 .desktop {
     display: none;
 }
 
-#nav {
+nav {
     font-family: Arial, Helvetica, sans-serif;
     position: relative;
 }
 
-#nav-side,
-#nav-top {
+#NavSide,
+#NavTop {
     background-color: #ffffff;
-    // background-color: #202023;
     color: #1650a7;
     border: 1px solid rgba(146, 146, 146, 0.5);
     z-index: 10;
 }
 
-#nav-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-}
-
-#nav-side {
-    // font-size: 1.5rem;
-    font-size: 1.2rem;
-    color: rgb(41, 40, 40) !important;
-    // width: 70%;
-    width: 300px;
-    position: fixed;
-    // height: 100vh;
-    height: 100%;
-    overflow-y: scroll;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    top: 0;
-    left: 0;
-    left: -300px;
-    transition: 200ms ease-in-out;
-    // padding: 1rem;
-    padding-top: 1rem;
-}
-
-#nav-side.active {
-    left: 0;
-}
-
-#nav-top-menu-bar,
-#nav-side-menu-close {
+#NavTopOpenBtn,
+#NavSideCloseBtn {
     cursor: pointer;
     font-size: 1.5rem;
     font-weight: bold;
@@ -98,99 +64,148 @@ ul {
     padding: 0 1rem;
 }
 
-#nav-side-menu-close {
-    align-self: flex-start;
-    margin-left: 1rem;
+nav ul a li {
+    color: rgb(41, 40, 40) !important;
 }
 
-.nav-side-div {
-    height: 100%;
-}
-
-.nav-side-menu-close-container {
-    // max-height: 200px;
-    max-height: 50px;
-}
-
-ul.nav-side-main-topics {
+//! NavTop Styles
+#NavTop {
     display: flex;
-    flex-direction: column;
-    // height: 100%;
-    height: 90%; // Not 100% b/c o version on bottom
-    // max-height: 100vh;
-    max-height: 90vh;
-    gap: 2rem;
-    overflow-y: scroll;
-    justify-content: space-evenly;
-}
-
-ul.nav-side-main-topics a li {
-    padding: 0.5rem;
-}
-
-ul.nav-side-main-topics li:hover {
-    background-color: rgba(146, 146, 146, 0.2);
-}
-
-ul.nav-side-main-topics li.active {
-    transition: 100ms ease-in-out;
-    // border-bottom: 2px solid rgba(146, 146, 146, 0.2);
-    background-color: rgba(146, 146, 146, 0.2);
-}
-
-#nav-side-profile {
-    align-self: center;
-}
-
-#nav-side-img-container {
-    display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    background-color: rgba(255, 208, 0, 0.867);
-    width: 5rem;
-    height: 5rem;
-    margin: 0 auto;
-    border: 5px solid #000;
-    border-radius: 50%;
-
-    #nav-side-img {
-        background-color: rgba(255, 208, 0, 0.867);
-        width: 5rem;
-        height: 5rem;
-        // border-radius: 999px;
-        border-radius: 50%;
-    }
-}
-
-#nav-side-profile-name {
     padding: 1rem;
-    a {
-        color: rgb(41, 40, 40) !important;
+}
+
+//! NavSide Styles
+#NavSide {
+    z-index: 12;
+    font-size: 1.2rem;
+    color: rgb(41, 40, 40) !important;
+    width: 300px;
+    position: fixed;
+    height: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    top: 0;
+    left: 0;
+    left: -300px;
+    transition: 200ms ease-in-out;
+}
+
+#NavSide.active {
+    left: 0;
+}
+
+div.NavSide-div-close {
+    display: flex;
+    align-content: center;
+    height: 70px;
+    #NavSideCloseBtn {
+        align-self: center;
+        margin-left: 1rem;
     }
 }
 
-ul.nav-side-main-topics li {
-    // padding: 0.5rem;
-    // &:hover {
-    //     background-color: blue;
-    // }
+#NavSideMenus {
+    display: flex;
+    flex-direction: row;
+    height: 85vh;
+}
+
+.NavSide-div-menu {
+    height: 500px;
+    width: 300px;
+    &.left-wing {
+        position: absolute;
+        top: 10;
+        transform: translateX(-300px);
+        transition: all 500ms ease-in-out;
+    }
+    &.right-wing {
+        position: absolute;
+        left: 300px;
+        top: 10;
+        transition: all 500ms ease-in-out;
+    }
+    &.chosen-wing {
+        position: absolute;
+        top: 10;
+        transform: translateX(-300px);
+        transition: all 500ms ease-in-out;
+    }
+    &.chosen-main-wing {
+        transform: translateX(0px);
+        transition: all 500ms ease-in-out;
+    }
+    transition: all 500ms ease-in-out;
+    ul {
+        height: 85vh;
+        overflow-y: scroll !important;
+        li {
+            padding: 1rem 1rem 1rem 2rem;
+        }
+    }
+}
+
+ul.NavSide-ul {
+    overflow-y: scroll;
+    width: 300px;
+    a li {
+        padding: 0.5rem;
+    }
+    li:hover {
+        background-color: rgba(146, 146, 146, 0.2);
+    }
+    li.active {
+        transition: 100ms ease-in-out;
+        background-color: rgba(146, 146, 146, 0.2);
+    }
 }
 
 nav .version {
     font-size: 0.5rem;
     color: rgba(185, 178, 178, 0.8);
     align-self: center;
+    text-align: center;
 }
 
-nav ul a li {
-    color: rgb(41, 40, 40) !important;
-}
+//! For Profile CSS below.
+// #nav-side-profile {
+//     align-self: center;
+// }
 
-nav .nav-html-icons {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #1650a7;
-}
+// #nav-side-img-container {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     background-color: rgba(255, 208, 0, 0.867);
+//     width: 5rem;
+//     height: 5rem;
+//     margin: 0 auto;
+//     border: 5px solid #000;
+//     border-radius: 50%;
+
+//     #nav-side-img {
+//         background-color: rgba(255, 208, 0, 0.867);
+//         width: 5rem;
+//         height: 5rem;
+//         // border-radius: 999px;
+//         border-radius: 50%;
+//     }
+// }
+
+// #nav-side-profile-name {
+//     padding: 1rem;
+//     a {
+//         color: rgb(41, 40, 40) !important;
+//     }
+// }
+
+// nav .nav-html-icons {
+//     font-size: 1.8rem;
+//     font-weight: bold;
+//     color: #1650a7;
+// }
 
 #main-container {
     padding: 1rem;
@@ -201,12 +216,12 @@ nav .nav-html-icons {
     .mobile {
         display: none;
     }
-    .nav-top-div {
+    .NavTop-div {
         width: 100%;
         &.desktop {
             display: block;
         }
-        .nav-top-ul {
+        .NavTop-ul {
             display: flex;
             width: 100%;
             justify-content: space-around;
