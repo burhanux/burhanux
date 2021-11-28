@@ -47,6 +47,11 @@ body {
         display: grid;
         grid-template-columns: auto;
         grid-template-rows: auto;
+
+        .last-updated-home{
+    justify-self: end;
+    color: var(--color-text);
+        }
 }
 
 #NavSide, #NavTop {

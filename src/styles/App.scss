@@ -229,8 +229,14 @@ nav .version {
 //     color: #1650a7;
 // }
 
-#main-container {
+#main-content {
+    height: 100vh;
     padding: 1rem;
+}
+
+//! Home
+.last-updated-home{
+    
 }
 
 /* MEDIA QUERY */
