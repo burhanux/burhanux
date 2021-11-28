@@ -23,7 +23,7 @@ const NavSide = (props: any) => {
                     <ul className="NavSide-ul">
                         {/* <li><Link to="/" ><span className="nav-html-icons">&#9881;</span>Home</Link></li> */}
                         <li><Link onClick={removeSideNavActive} to="/" >Home</Link></li>
-                        <li><Link onClick={() => openSideNavTopic("NavSideNotes")} to="/notes">Notes</Link></li>
+                        <li><Link onClick={() => openSideNavTopic("NavSideNotes")} to="/notes">Notes &#10095;</Link></li>
                         <li><Link onClick={removeSideNavActive} to="/projects">Projects</Link></li>
                         <li><Link onClick={removeSideNavActive} to="/about">About</Link></li>
                         <li><Link onClick={removeSideNavActive} to="/books">Books</Link></li>
@@ -33,7 +33,8 @@ const NavSide = (props: any) => {
                 </div>
                 <div className="NavSide-div-menu right-wing" id="NavSideNotes">
                     <ul className="NavSide-ul" >
-                        <li><button onClick={() => closeSideNavTopic("NavSideNotes")}><h2>&#10094;</h2></button></li>
+                        <li><button onClick={() => closeSideNavTopic("NavSideNotes")} className="arrow-btn"><h2>&#10094; Notes</h2></button></li>
+                        <hr />
                         <li><Link onClick={removeSideNavActive} to="/about">About</Link></li>
                         <li><Link onClick={removeSideNavActive} to="/about">About</Link></li>
                         <li><Link onClick={removeSideNavActive} to="/about">About</Link></li>
