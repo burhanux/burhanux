@@ -59,7 +59,23 @@ function About() {
 
         }
     }, [])
-    return <h1>About</h1>;
+    return (
+        <div>
+            <div className="container">
+                <h5 className="last-updated last-updated-home">Updated: {new Date().toLocaleString()}</h5>
+                <h1>About Me</h1>
+                <p>Born New Jersey, and Raised in Silicon Valley</p>
+                <p>I studied and earned a BA of Psychology from UC Berkeley. I originally planned on being a Neurscientist,
+                    but my interests deflected towards Human Computer Interaction(HCI), specifically in UX design/development.
+                    I guess I just like to know how people think.
+                    Thus, I earned an AS Computer Information Systems from San Jose City College to build a foundation in HCI.</p>
+
+                <p>I gained some exierence working as a QA intern in HashTag Systems, Frontend QA Apple, and currently lead JavaScript/React Developer at DisplayRide Inc.</p>
+                <p>I'm just a boring simple guy.</p>
+
+            </div>
+        </div>
+    )
 }
 
 function Contact() {
